@@ -1,11 +1,21 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
+import { logo } from '../assets'
 
 const Navbar = () => {
   return (
     <>
     
-    <div>Navbar</div>
+    <section>
+    <div>
+        <div>
+            <Link>
+            <img src={logo} alt="" />
+            </Link>
+        </div>
+    </div>
+
+    </section>
     <Outlet/>
     </>
   )
