@@ -33,25 +33,25 @@ const Navbar = () => {
   ];
   return (
     <>
-      <section className="bg-gray-100 px-2  absolute top-0 right-0 w-full ">
-        <div className="relative h-52 md:h-48 lg:h-auto">
+      <section className="bg-gray-100  z-50 top-0 right-0 w-full ">
+        <div className="relative py-3">
           <div className=" flex items-center justify-start">
-            <div className=" border shadow-md  flex-1 flex justify-center items-center md:h-28 md:flex-initial">
+            <div className="   flex-1 flex justify-center items-center h-24  md:h-16 md:flex-initial">
               <Link to="/" className="">
-                <img src={logo} alt="" className="w-40" />
+                <img src={logo} alt="" className="border shadow-md md:border-none md:shadow-none w-24  md:w-40 " />
               </Link>
             </div>
             <div className="flex-1 md:flex md:flex-row md:px-2">
               <nav
-                className={` w-full py-3 transition-all ease-in duration-400 lg:flex-[0.5] xl:flex-[0.6] ${
-                  toggle ? "absolute left-0 top-52  bg-gray-200" : "hidden md:flex md:flex-1 md:items-center md:justify-center lg:justify-end"
+                className={` w-full py-3 transition-all ease-in duration-400 lg:flex-[0.5] xl:flex-[0.6] 2xl:flex-[0.7] ${
+                  toggle ? "absolute left-0 top-0 h-screen w-full  bg-gray-200 md:static md:bg-gray-100" : "hidden md:flex md:flex-1 md:items-center md:justify-center lg:justify-end"
                 }`}
               >
                 <ul
                   className="flex flex-col gap-5 justify-center items-center text-2xl fo
                 nt-bold md:flex-row"
                 >
-                  <div className="w-full flex justify-end items-center px-5 text-3xl md:hidden ">
+                  <div className="w-full flex justify-end items-center px-5  md:hidden ">
                     <RxCross2 onClick={() => setToggle(false)} />
                   </div>
                   {navlink.map((item) => (
@@ -61,8 +61,8 @@ const Navbar = () => {
                         onClick={() => setToggle(false)}
                         className={({ isActive }) =>
                           isActive
-                            ? "underline text-4xl md:text-3xl md:no-underline ease-in-out transition-all duration-150 text-blue-800"
-                            : "text-gray-500"
+                            ? "underline text-2xl md:text-xl md:no-underline ease-in-out transition-all duration-150 text-blue-800 uppercase font-bold"
+                            : "text-gray-500 uppercase text-lg font-bold"
                         }
                       >
                         {item.title}
@@ -71,27 +71,27 @@ const Navbar = () => {
                   ))}
                 </ul>
               </nav>
-              <div className="flex flex-col md:flex-initial lg:flex-row lg:flex-[0.5] xl:flex-[0.4] ">
-                <div className="flex justify-center items-center py-2 absolute left-5 top-40 md:text-3xl md:top-32 pl-5 lg:static lg:text-sm lg:flex-1">
+              <div className="flex flex-col sm:flex-row md:flex-initial lg:flex-row lg:flex-[0.5] xl:flex-[0.4] 2xl:flex-[0.2]">
+                <div className="hidden lg:flex justify-center items-center py-2 absolute    md:text-3xl md:top-16 pl-5 lg:static lg:text-sm lg:flex-1">
                   <h1 className="font-bold text-gray-500">
                     Welcome, Raju chhetry
                   </h1>
                 </div>
-                <div className="w-full flex justify-center items-center py-2 lg:flex-1">
-                  <Link className="px-6  py-2 text-xl rounded-md bg-[#0058FC] text-white font-semibold lg:px-4 lg:py-1">
+                <div className="hidden  w-full  md:flex justify-center items-center py-2 lg:flex-1">
+                  <Link className="px-6 w-28 lg:w-auto py-2 text-xl rounded-md bg-[#0058FC] text-white font-semibold lg:px-4 lg:py-1">
                     Log In
                   </Link>
                 </div>
                 <div className="w-full flex justify-center items-center py-2 text-3xl md:hidden">
                   <GiHamburgerMenu onClick={() => setToggle(!toggle)} />
                 </div>
-                <div className=" flex absolute justify-center items-center  right-0 top-40 px-4 md:top-32 lg:static lg:flex-initial">
-                  <div className="relative p-2">
+                <div className="hidden  md:flex absolute justify-center items-center   md:static lg:flex-initial">
+                  <Link to="cart" className="relative p-2">
                     <span className="absolute top-0 right-0 w-5 h-5 flex items-center justify-center bg-[#3A5EFC] rounded-full md:w-6 md:h-6 md:text-xl lg:w-5 lg:h-5 lg:text-sm">
                       0
                     </span>
                     <BsCart2 className="text-3xl md:text-4xl lg:text-2xl" />
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
