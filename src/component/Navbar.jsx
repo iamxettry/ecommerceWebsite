@@ -33,8 +33,8 @@ const Navbar = () => {
   ];
   return (
     <>
-      <section className="bg-gray-100 px-2 absolute top-0 right-0 w-full ">
-        <div className="relative h-screen">
+      <section className="bg-gray-100 px-2  absolute top-0 right-0 w-full ">
+        <div className="relative h-52 md:h-48 lg:h-auto">
           <div className=" flex items-center justify-start">
             <div className=" border shadow-md  flex-1 flex justify-center items-center md:h-28 md:flex-initial">
               <Link to="/" className="">
