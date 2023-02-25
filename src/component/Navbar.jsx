@@ -5,6 +5,7 @@ import { logo } from "../assets";
 import { BsCart2 } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Btn from "./Btn";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -49,7 +50,7 @@ const Navbar = () => {
               >
                 <ul
                   className="flex flex-col gap-5 justify-center items-center text-2xl fo
-                nt-bold md:flex-row"
+                nt-bold md:flex-row z-50"
                 >
                   <div className="w-full flex justify-end items-center px-5  md:hidden ">
                     <RxCross2 onClick={() => setToggle(false)} />
@@ -78,9 +79,7 @@ const Navbar = () => {
                   </h1>
                 </div>
                 <div className="hidden  w-full  md:flex justify-center items-center py-2 lg:flex-1">
-                  <Link className="px-6 w-28 lg:w-auto py-2 text-xl rounded-md bg-[#0058FC] text-white font-semibold lg:px-4 lg:py-1">
-                    Log In
-                  </Link>
+                  <Btn title="Log In" path="/"/>
                 </div>
                 <div className="w-full flex justify-center items-center py-2 text-3xl md:hidden">
                   <GiHamburgerMenu onClick={() => setToggle(!toggle)} />
